@@ -1,0 +1,37 @@
+{
+  "name": "aero",
+  "version": "1.0.0",
+  "description": "Aero landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdykapar/aero.git"
+  },
+  "keywords": [
+    "html",
+    "js",
+    "sass",
+    "gulp"
+  ],
+  "author": "Abdykapar kamilov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abdykapar/aero/issues"
+  },
+  "homepage": "https://github.com/Abdykapar/aero#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-uglify-es": "^3.0.0",
+    "sass": "^1.37.5"
+  }
+}

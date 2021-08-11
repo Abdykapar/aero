@@ -184,7 +184,6 @@ gsap.from(".home__text", {
     delay: 0.2,
     stagger: 0.2,
     ease: "sine", 
-    // force3D: true
   });
 
   gsap.from(".contact__text", {
