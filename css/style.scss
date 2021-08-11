@@ -1,0 +1,441 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+$fontFace: "Bruno Ace SC", sans-serif;
+@font-face {
+  font-family: "Bruno Ace SC";
+  src: url("../fonts/Bruno\ Ace\ SC\ Regular.ttf");
+}
+@font-face {
+  font-family: "Frontage Condensed";
+  src: url("../fonts/Juri\ Zaech\ -\ FrontageCondensed-Outline.otf");
+}
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../fonts/BebasNeue-Regular.ttf");
+}
+
+body {
+  font-family: $fontFace;
+  background-color: #010001;
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.title {
+  font-size: 72px;
+  line-height: 86px;
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+}
+
+.text {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.reset-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav {
+  position: fixed;
+  z-index: 20;
+  right: 35px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  &__title {
+    display: none;
+    font-size: 11px;
+    line-height: 13px;
+    color: #5b97f2;
+    margin-right: 13px;
+    margin-top: -2px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: flex-end;
+
+    &.selected {
+      .nav__title {
+        display: block;
+      }
+      .nav__shape {
+        &.main {
+          background: rgba(255, 255, 255, 0.95);
+        }
+      }
+    }
+  }
+
+  &__shape {
+    display: block;
+    width: 13px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.6);
+    margin-bottom: 13px;
+
+    &.main {
+      width: 22px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.home {
+  position: relative;
+  height: 100vh;
+  &__background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url("../img/home.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  &__content {
+    margin-left: auto;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    font-family: "Frontage Condensed", sans-serif;
+    font-weight: 400;
+    color: #0aa1f7;
+    font-size: 138px;
+    line-height: 166px;
+    margin-bottom: 36px;
+
+    .home__white {
+      color: #fff;
+      font-size: 170px;
+      line-height: 204px;
+    }
+  }
+
+  &__text {
+    width: 486px;
+  }
+}
+
+.overview {
+  &__title {
+    margin: 239px 0 128px;
+  }
+
+  &__text {
+    width: 90%;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 40px;
+  }
+}
+
+.key-facts {
+  position: relative;
+  &__title {
+    margin: 362px 0 40px;
+  }
+
+  &__text {
+    width: 576px;
+    margin: 0 auto;
+  }
+
+  &__item {
+    margin-top: 233px;
+    margin-bottom: 203px;
+    &__head {
+      font-size: 144px;
+      line-height: 173px;
+      color: #fff;
+      text-align: center;
+      width: 100%;
+      display: block;
+      font-family: "Bebas Neue", sans-serif;
+      margin-bottom: 17px;
+
+      &.extra {
+        display: inline-block;
+      }
+    }
+
+    &:first-child {
+      span {
+        color: #5b97f2;
+      }
+    }
+
+    p {
+      max-width: 315px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  &__content {
+    width: 80%;
+    padding-right: 40px;
+    height: 100vh;
+  }
+
+  &__counts {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__background {
+    background-image: url("../img/key-facts.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+  }
+}
+
+.services {
+  z-index: 1;
+  position: relative;
+  &__title {
+    margin-top: 62px;
+    margin-bottom: 116px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    width: 93%;
+
+    &:nth-child(3) {
+      width: 90%;
+    }
+  }
+}
+
+.hfdm-services {
+  position: relative;
+  margin-top: -160px;
+  margin-bottom: -100px;
+  font-family: "Bebas Neue", sans-serif;
+
+  &__title {
+    padding: 276px 0 116px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    width: 92%;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  &__list {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  &__content {
+    padding-bottom: 177px;
+    margin-bottom: 90px;
+    z-index: 1;
+    position: relative;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  &__background {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    &::after {
+      content: "";
+      background-image: url("../img/hfdm-services.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.gallery {
+  padding-bottom: 266px;
+  &__title {
+    margin-bottom: 118px;
+  }
+
+  &__content {
+    overflow: hidden;
+  }
+
+  &__slider {
+    position: relative;
+    // left: -100px;
+    display: flex;
+    height: 463px;
+  }
+
+  &__item {
+    width: 630px;
+    height: 463px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.contact {
+  font-family: "Bebas Neue", sans-serif;
+  position: relative;
+  &__title {
+    font-size: 48px;
+    line-height: 58px;
+    padding: 41px 0;
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: 43px;
+  }
+
+  &__item {
+    font-size: 18px;
+    line-height: 22px;
+
+    label {
+      display: block;
+    }
+
+    input {
+      height: 55px;
+    }
+
+    input,
+    textarea {
+      font-family: "Bebas Neue", sans-serif;
+      margin: 27px 0 43px;
+      background: inherit;
+      outline: none;
+      border: 2px solid #5b97f2;
+      font-size: 18px;
+      padding: 5px 10px;
+      color: #fff;
+      width: 305px;
+    }
+  }
+
+  &__submit {
+    width: 193px;
+    height: 43px;
+    background: #1654b3;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 22px;
+    font-family: inherit;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__form {
+    flex: 1;
+  }
+
+  &__logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 101px;
+    h2 {
+      font-weight: 400;
+      font-size: 144px;
+      line-height: 173px;
+      font-family: "Frontage Condensed";
+    }
+  }
+
+  &__body {
+    display: flex;
+    padding-bottom: 275px;
+  }
+
+  &__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: no-repeat
+      url("../img/josue-isai-ramos-figueroa-n2NBgIx3A28-unsplash\ 1.jpg");
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.87;
+  }
+}
+
+@keyframes title {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
