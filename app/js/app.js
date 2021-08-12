@@ -236,31 +236,30 @@ window.addEventListener('scroll', function (e) {
   }
 })
 
-const mySplitText = new SplitText(".home__title", {type:"chars, words"}),
+const mySplitText = document.getElementsByClassName('logo_item'),
     tl = new TimelineLite({
       scrollTrigger: {
         trigger: '.home__title',
         toggleActions: 'restart none none none'
     },
     }),
-    numChars = mySplitText.chars.length;
-    console.log(mySplitText)
+    numChars = mySplitText.length;
 
 for(let i = 0; i < numChars; i++){
   //random value used as position parameter
-  tl.from(mySplitText.chars[i], 2, {opacity:0}, Math.random() * 2);
+  tl.from(mySplitText[i], 2, {opacity:0}, Math.random() * 2);
 }
 
-const mySplitText1 = new SplitText(".contact__logo", {type:"chars, words"}),
+const mySplitText1 = document.getElementsByClassName('logo_bottom_item'),
     tl1 = new TimelineLite({
       scrollTrigger: {
         trigger: '.contact__logo',
         toggleActions: 'restart none none none'
     },
     }),
-    numChars1 = mySplitText1.chars.length;
+    numChars1 = mySplitText1.length;
 
 for(let i = 0; i < numChars1; i++){
   //random value used as position parameter
-  tl1.from(mySplitText1.chars[i], 2, {opacity:0}, Math.random() * 2);
+  tl1.from(mySplitText1[i], 2, {opacity:0}, Math.random() * 2);
 }
