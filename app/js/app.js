@@ -175,26 +175,26 @@ gsap.from(".home__text", {
   });
 
   gsap.from(".contact__title", {
-    duration: 1.2,
+    duration: 1,
     scrollTrigger: {
         trigger: '.contact__title',
         toggleActions: 'restart none none none'
     },
     opacity: 0, 
-    delay: 0.2,
+    delay: 0.1,
     stagger: 0.2,
     ease: "sine", 
   });
 
   gsap.from(".contact__text", {
-    duration: 1.2,
+    duration: 1,
     scrollTrigger: {
         trigger: '.contact__text',
         toggleActions: 'restart none none none'
     },
     opacity: 0, 
     y: 30,
-    delay: 0.2,
+    delay: 0.1,
     stagger: 0.2,
     ease: "sine", 
     // force3D: true
@@ -213,14 +213,28 @@ gsap.from(".home__text", {
     // force3D: true
   });
 
-// window.addEventListener('scroll', function (e) {
-//   const scrollTop = window.scrollTop
-//   const sections = document.getElementsByTagName('section')
+window.addEventListener('scroll', function (e) {
+  const top = window.pageYOffset
+  const sections = document.getElementsByTagName('section')
+  const navs = document.getElementsByClassName('nav__item')
 
-//   sections.forEach(i => {
-//     if (i.)
-//   })
-// })
+  const removeSelected = () => {
+    for (let i of navs) {
+      i.classList.remove('selected')
+    }
+  }
+  let  index = 0
+  for (let i of sections) {
+    if (i.offsetTop - 500 <= top) {
+      removeSelected()
+      navs[index + 1].classList.add('selected')
+    } else if (top < 700) {
+      removeSelected()
+      navs[0].classList.add('selected')
+    }
+    index++
+  }
+})
 
 const mySplitText = new SplitText(".home__title", {type:"chars, words"}),
     tl = new TimelineLite({

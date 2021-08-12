@@ -79,4 +79,4 @@ exports.images = images;
 exports.cleanDist = cleanDist;
 
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(scripts, browserSyn, watching)
+exports.default = parallel(styles, scripts, browserSyn, watching)
