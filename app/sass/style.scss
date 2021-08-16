@@ -60,6 +60,12 @@ html {
   display: none;
 }
 
+.hide-nav {
+  // display: none;
+  right: -100% !important;
+  transition: all 500ms ease-in;
+}
+
 .reset-btn {
   border: none;
   outline: none;
@@ -71,6 +77,7 @@ html {
   position: fixed;
   z-index: 20;
   right: 35px;
+  transition: all 500ms ease;
   pointer-events: none;
 
   &__content {

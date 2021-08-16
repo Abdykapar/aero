@@ -217,6 +217,7 @@ window.addEventListener('scroll', function (e) {
   const top = window.pageYOffset
   const sections = document.getElementsByTagName('section')
   const navs = document.getElementsByClassName('nav__item')
+  const nav = document.getElementById('nav')
 
   const removeSelected = () => {
     for (let i of navs) {
@@ -228,9 +229,11 @@ window.addEventListener('scroll', function (e) {
     if (i.offsetTop - 500 <= top) {
       removeSelected()
       navs[index + 1].classList.add('selected')
+      nav.classList.remove('hide-nav')
     } else if (top < 700) {
       removeSelected()
       navs[0].classList.add('selected')
+      nav.classList.add('hide-nav')
     }
     index++
   }
