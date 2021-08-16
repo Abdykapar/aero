@@ -56,10 +56,22 @@ html {
   text-decoration: none;
 }
 
+.hide {
+  display: none;
+}
+
+.reset-btn {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
 .nav {
   position: fixed;
   z-index: 20;
   right: 35px;
+  pointer-events: none;
 
   &__content {
     display: flex;
@@ -70,27 +82,34 @@ html {
   }
 
   &__title {
-    display: none;
+    // display: none;
     font-size: 11px;
     line-height: 13px;
     color: #5b97f2;
     margin-right: 13px;
+    opacity: 0.5;
     margin-top: -2px;
-    transition: all 600ms ease;
+    transition: all 200ms ease;
   }
 
   &__item {
     display: flex;
     justify-content: flex-end;
+    pointer-events: all;
+
+    a {
+      display: flex;
+    }
 
     &.selected {
       .nav__title {
-        display: block;
-        transition: all 600ms ease;
+        // display: block;
+        opacity: 1;
+        transition: all 200ms ease;
       }
       .nav__shape {
         &.main {
-          transition: all 600ms ease;
+          transition: all 200ms ease;
           background: rgba(255, 255, 255, 0.95);
         }
       }
@@ -177,6 +196,12 @@ html {
 
   &__text {
     width: 486px;
+  }
+
+  &__audio-setting {
+    position: absolute;
+    right: 27px;
+    top: 24px;
   }
 }
 
@@ -418,11 +443,19 @@ html {
     display: flex;
     justify-content: center;
     margin-top: 101px;
+    font-family: "Frontage Condensed", sans-serif;
     h2 {
       font-weight: 400;
-      font-size: 144px;
-      line-height: 173px;
+      color: #0aa1f7;
+      font-size: 138px;
+      line-height: 166px;
       font-family: "Frontage Condensed";
+
+      .home__white {
+        color: #fff;
+        font-size: 170px;
+        line-height: 160px;
+      }
     }
   }
 

@@ -236,6 +236,27 @@ window.addEventListener('scroll', function (e) {
   }
 })
 
+gsap.to("#key-facts__back", {
+  yPercent: -50,
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#key-facts__back",
+    // start: "top bottom",
+    // end: "bottom top",
+    scrub: true
+  }
+});
+gsap.to("#hfdm-services_back", {
+  yPercent: 40,
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#hfdm-services_back",
+    // start: "top bottom",
+    // end: "bottom top",
+    scrub: true
+  }
+});
+
 const mySplitText = document.getElementsByClassName('logo_item'),
     tl = new TimelineLite({
       scrollTrigger: {
@@ -253,7 +274,7 @@ for(let i = 0; i < numChars; i++){
 const mySplitText1 = document.getElementsByClassName('logo_bottom_item'),
     tl1 = new TimelineLite({
       scrollTrigger: {
-        trigger: '.contact__logo',
+        trigger: '.second-logo',
         toggleActions: 'restart none none none'
     },
     }),
@@ -263,3 +284,17 @@ for(let i = 0; i < numChars1; i++){
   //random value used as position parameter
   tl1.from(mySplitText1[i], 2, {opacity:0}, Math.random() * 2);
 }
+
+const audio = document.getElementById('audio')
+const muteBtn = document.getElementById('mute')
+const unmuteBtn = document.getElementById('unmute')
+muteBtn.addEventListener('click', function() {
+  audio.pause()
+  unmuteBtn.classList.remove('hide')
+  muteBtn.classList.add('hide')
+})
+unmuteBtn.addEventListener('click', function() {
+  audio.play()
+  muteBtn.classList.remove('hide')
+  unmuteBtn.classList.add('hide')
+})
