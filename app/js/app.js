@@ -291,13 +291,16 @@ for(let i = 0; i < numChars1; i++){
 const audio = document.getElementById('audio')
 const muteBtn = document.getElementById('mute')
 const unmuteBtn = document.getElementById('unmute')
+
 muteBtn.addEventListener('click', function() {
   audio.pause()
+  console.log('pause')
   unmuteBtn.classList.remove('hide')
   muteBtn.classList.add('hide')
 })
 unmuteBtn.addEventListener('click', function() {
   audio.play()
+  console.log('play')
   muteBtn.classList.remove('hide')
   unmuteBtn.classList.add('hide')
 })
