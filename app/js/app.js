@@ -240,7 +240,7 @@ window.addEventListener('scroll', function (e) {
 })
 
 gsap.to("#key-facts__back", {
-  yPercent: -50,
+  yPercent: -20,
   ease: "none",
   scrollTrigger: {
     trigger: "#key-facts__back",

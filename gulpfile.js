@@ -67,7 +67,7 @@ function build () {
         'app/fonts/**/*',
         'app/js/main.min.js',
         'app/*.html',
-        'app/video/aero-back.mp4',
+        'app/video/*.mp4',
         'app/audio/audio.mp3',
     ], { base: 'app' })
         .pipe(dest('dist'))
